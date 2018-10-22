@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RoadsComponent } from './works/roads/roads.component';
 import { AccessComponent } from './works/access/access.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'roads', component: RoadsComponent},
   { path: 'access', component: AccessComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', redirectTo: ''}
 ]
 

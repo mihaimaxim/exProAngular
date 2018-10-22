@@ -4,6 +4,20 @@
     <div id="sidebar-text">birou de proiectare</div>
   </div>
   <ul class="list-group">
+    <ng-template [ngIf]='!authenticationService.isAuthenticated()'>
+      <li class="list-group-item">
+        <a routerLink='register'>Register</a>
+      </li>
+      <li class="list-group-item">
+          <a routerLink='login'>Login</a>
+        </li>
+    </ng-template>
+    <li class="list-group-item" *ngIf='authenticationService.isAuthenticated()'>
+        <a (click)='onLogout()'>Logout</a>
+      </li>
+    <li class="list-group-item">
+        <a routerLink='home'>Home</a>
+      </li>
     <li class="list-group-item">
       <a routerLink='home'>Home</a>
     </li>
