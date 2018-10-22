@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none    
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    margin-top: 25px
+}
+
+#sidebar .sidebar-header {
+    margin-bottom: 25px
+}
+
+#sidebar .sidebar-header #sidebar-text {
+    text-align: center;
+    margin-top: 10px
+}
+
+#sidebar .list-group #pageSubmenu {
+    padding-left: 25px
+}
+
+#sidebar .list-group #pageSubmenu li {
+    padding-top: 10px
+}
+
+.list-group-item {
+    padding-left: 0
+}

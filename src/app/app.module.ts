@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AboutComponent } from './about/about.component';
-import { LocationComponent } from './location/location.component';
+import { RoadsComponent } from './works/roads/roads.component';
+import { AccessComponent } from './works/access/access.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LocationComponent } from './location/location.component';
     HomeComponent,
     SidebarComponent,
     AboutComponent,
-    LocationComponent
+    RoadsComponent,
+    AccessComponent
   ],
   imports: [
     BrowserModule,
