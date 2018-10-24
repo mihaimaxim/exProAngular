@@ -1,9 +1,12 @@
 <nav id="sidebar">
   <div class="sidebar-header">
-    <img src="https://www.exprogroup.com/assets/img/logo.svg" class="img-fluid">
+    <img src="https://www.exprogroup.com/assets/img/logo.svg" class="img-fluid" routerLink=''>
     <div id="sidebar-text">birou de proiectare</div>
   </div>
   <ul class="list-group">
+    <li class="list-group-item">
+      <a routerLink='home'>Home</a>
+    </li>
     <ng-template [ngIf]='!authenticationService.isAuthenticated()'>
       <li class="list-group-item">
         <a routerLink='register'>Register</a>
@@ -16,19 +19,16 @@
       <a (click)='onLogout()'>Logout</a>
     </li>
     <li class="list-group-item">
-      <a routerLink='home'>Home</a>
-    </li>
-    <li class="list-group-item">
       <a routerLink='about'>About</a>
     </li>
     <li class="list-group-item">
       <a href="#pageSubmenu" data-toggle="collapse">Works</a>
       <ul class="collapse list-unstyled" id="pageSubmenu">
         <li>
-          <a routerLink='roads'>Road Design</a>
+          <a routerLink='roads' (click)='toRoads()'>Road Design</a>
         </li>
         <li>
-          <a routerLink='access'>Road Access Design</a>
+          <a routerLink='access' (click)='toAccesses()'>Road Access Design</a>
         </li>
       </ul>
     </li>

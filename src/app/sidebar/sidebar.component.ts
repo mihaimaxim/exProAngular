@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
 
@@ -10,10 +11,23 @@ import { AuthenticationService } from '../authentication/authentication.service'
 export class SidebarComponent {
 
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) { }
 
   onLogout() {
     this.authenticationService.destroyToken()
+  }
+
+  toRoads() {
+    if (!this.authenticationService.isAuthenticated()) {
+      this.router.navigate(['/unauthorized'])
+    }
+  }
+
+  toAccesses() {
+    if (!this.authenticationService.isAuthenticated()) {
+      this.router.navigate(['/unauthorized'])
+    }
   }
 }
