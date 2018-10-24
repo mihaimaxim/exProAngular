@@ -6,12 +6,16 @@ a:focus {
     cursor: pointer;
 }
 
-img {
+.sidebar-header {
     cursor: pointer;
 }
 
-img:focus {
+.sidebar-header:focus {
     outline: 0
+}
+
+#sidebar-text {
+    font-style: italic
 }
 
 .list-group-item {
