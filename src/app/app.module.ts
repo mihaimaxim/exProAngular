@@ -14,7 +14,6 @@ import { RoadsComponent } from './works/roads/roads.component';
 import { AccessComponent } from './works/access/access.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { LoginComponent } from './authentication/login/login.component';
-import { UnauthorizedComponent } from './authentication/unauthorized/unauthorized.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { UnauthorizedComponent } from './authentication/unauthorized/unauthorize
     RoadsComponent,
     AccessComponent,
     RegisterComponent,
-    LoginComponent,
-    UnauthorizedComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
