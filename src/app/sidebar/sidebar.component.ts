@@ -21,13 +21,13 @@ export class SidebarComponent {
 
   toRoads() {
     if (!this.authenticationService.isAuthenticated()) {
-      this.router.navigate(['/unauthorized'])
+      this.router.navigate(['/login'])
     }
   }
 
   toAccesses() {
     if (!this.authenticationService.isAuthenticated()) {
-      this.router.navigate(['/unauthorized'])
+      this.router.navigate(['/login'])
     }
   }
 }
