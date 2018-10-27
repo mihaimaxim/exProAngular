@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
 
 @Component({
   selector: 'app-roads',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoadsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  toLogin() {
+    this.router.navigate(['/login'])
   }
 
 }

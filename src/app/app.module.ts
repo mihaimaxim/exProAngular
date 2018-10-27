@@ -14,6 +14,7 @@ import { RoadsComponent } from './works/roads/roads.component';
 import { AccessComponent } from './works/access/access.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { LoginComponent } from './authentication/login/login.component';
+import { PreviousRouteService } from './authentication/previousURL.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './authentication/login/login.component';
   ],
   providers: [
     AuthenticationService,
-    AuthenticationGuardService
+    AuthenticationGuardService,
+    PreviousRouteService
   ],
   bootstrap: [AppComponent]
 })

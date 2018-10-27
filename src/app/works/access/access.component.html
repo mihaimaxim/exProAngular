@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <p>
-        access works!
-      </p>      
+      <ng-template [ngIf]='!auth.isAuthenticated()'>
+        <p>You should authenticate first! Click <a (click)='toLogin()' style="color:cornflowerblue">here</a>.</p>
+      </ng-template>
+      <p *ngIf='auth.isAuthenticated()'>access works!</p>
     </div>
   </div>
 </div>

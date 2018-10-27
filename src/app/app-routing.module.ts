@@ -11,14 +11,14 @@ import { LoginComponent } from './authentication/login/login.component';
 import { AuthenticationGuardService } from './authentication/authenticationGuard.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'roads', component: RoadsComponent, canActivate: [AuthenticationGuardService]},
-  { path: 'access', component: AccessComponent, canActivate: [AuthenticationGuardService]},
-  { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent},
-  { path: '**', redirectTo: ''}
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'roads', component: RoadsComponent },
+  { path: 'access', component: AccessComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '' }
 ]
 
 @NgModule({
