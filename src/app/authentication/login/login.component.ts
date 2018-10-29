@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSignIn(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
+    const email = form.value.userData.email;
+    const password = form.value.userData.password;
     this.authenticationService.onSignInUser(email, password)
     if (this.previousURL.getPreviousURL() === '/roads') {
       this.router.navigate(['/roads'])
