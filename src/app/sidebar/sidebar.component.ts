@@ -16,7 +16,8 @@ export class SidebarComponent {
   ) { }
 
   onLogout() {
-    this.authenticationService.destroyToken()
+    this.authenticationService.destroyToken();
+    this.router.navigate([''])
   }
 
   toRoads() {
