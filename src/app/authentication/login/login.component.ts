@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 import { AuthenticationService } from '../authentication.service';
 import { PreviousRouteService } from '../previousURL.service';
@@ -19,7 +21,16 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.previousURL.getPreviousURL())
+    console.log(this.previousURL.getPreviousURL());
+    firebase.auth().onAuthStateChanged(
+      (user) => {
+        if(user) {
+          console.log('user is signed in')
+        } else {
+          console.log('no user here')
+        }
+      }
+    )
   }
 
   onSignIn(form: NgForm) {
