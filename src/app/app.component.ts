@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 
-import { PreviousRouteService } from './authentication/previousURL.service';
+import { PreviousRouteService } from './authentication/services/previousURL.service';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +16,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: "AIzaSyDmf8pwkA0hJXWJfVMLfhndRdDhLyX7XWM",
-      authDomain: "expro-angular.firebaseapp.com"
-    })
+      apiKey: 'AIzaSyDmf8pwkA0hJXWJfVMLfhndRdDhLyX7XWM',
+      authDomain: 'expro-angular.firebaseapp.com'
+    });
   }
 }

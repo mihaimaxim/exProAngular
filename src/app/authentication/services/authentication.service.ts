@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -23,7 +23,7 @@ export class AuthenticationService {
             )
             .catch(
                 error => console.log(error)
-            )
+            );
     }
 
     onSignInUser(
@@ -36,28 +36,28 @@ export class AuthenticationService {
                     firebase.auth().currentUser.getIdToken()
                         .then(
                             (token: string) => this.token = token
-                        )
+                        );
                 }
             )
             .catch(
                 error => console.log(error)
-            )
+            );
     }
 
     destroyToken() {
         firebase.auth().signOut();
-        this.token = null
+        this.token = null;
     }
 
     getToken() {
         firebase.auth().currentUser.getIdToken()
             .then(
                 (token: string) => this.token = token
-            )
-        return this.token
+            );
+        return this.token;
     }
 
     isAuthenticated() {
-        return this.token != null
+        return this.token != null;
     }
 }

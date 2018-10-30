@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../authentication/authentication.service';
+import { AuthenticationService } from '../authentication/services/authentication.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,18 +17,18 @@ export class SidebarComponent {
 
   onLogout() {
     this.authenticationService.destroyToken();
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 
   toRoads() {
     if (!this.authenticationService.isAuthenticated()) {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
     }
   }
 
   toAccesses() {
     if (!this.authenticationService.isAuthenticated()) {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
     }
   }
 }

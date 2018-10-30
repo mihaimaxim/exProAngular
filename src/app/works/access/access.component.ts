@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { AuthenticationService } from 'src/app/authentication/services/authentication.service';
 
 @Component({
   selector: 'app-access',
@@ -16,6 +16,6 @@ export class AccessComponent {
   ) {}
 
   toLogin() {
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
   }
 }

@@ -4,7 +4,33 @@
       <ng-template [ngIf]='!auth.isAuthenticated()'>
         <p>You should authenticate first! Click <a (click)='toLogin()' style="color:cornflowerblue">here</a>.</p>
       </ng-template>
-      <p *ngIf='auth.isAuthenticated()'>roads work!</p>
+      <div class="row">
+        <div class="col-12">
+          <div *ngIf='auth.isAuthenticated()'>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <app-road-item 
+                *ngFor='let roadElement of roads; let i = index' 
+                [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'"
+                [road]='roadElement' [index]='i'></app-road-item>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

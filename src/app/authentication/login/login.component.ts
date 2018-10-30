@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
-import { AuthenticationService } from '../authentication.service';
-import { PreviousRouteService } from '../previousURL.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { PreviousRouteService } from '../services/previousURL.service';
 
 @Component({
   selector: 'app-login',
@@ -24,25 +24,25 @@ export class LoginComponent implements OnInit {
     console.log(this.previousURL.getPreviousURL());
     firebase.auth().onAuthStateChanged(
       (user) => {
-        if(user) {
-          console.log('user is signed in')
+        if (user) {
+          console.log('user is signed in');
         } else {
-          console.log('no user here')
+          console.log('no user here');
         }
       }
-    )
+    );
   }
 
   onSignIn(form: NgForm) {
     const email = form.value.userData.email;
     const password = form.value.userData.password;
-    this.authenticationService.onSignInUser(email, password)
+    this.authenticationService.onSignInUser(email, password);
     if (this.previousURL.getPreviousURL() === '/roads') {
-      this.router.navigate(['/roads'])
+      this.router.navigate(['/roads']);
     } else if (this.previousURL.getPreviousURL() === '/access') {
-      this.router.navigate(['/access'])
+      this.router.navigate(['/access']);
     } else {
-      this.router.navigate([''])
+      this.router.navigate(['']);
     }
   }
 }
