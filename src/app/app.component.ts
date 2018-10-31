@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import 'firebase/auth';
 
 import { PreviousRouteService } from './authentication/services/previousURL.service';
 

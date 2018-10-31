@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Response } from '@angular/http';
 
 import { AuthenticationService } from 'src/app/authentication/services/authentication.service';
-import { RoadService } from "../RoadService";
+import { RoadService } from '../road.service';
+import { DataStorageService } from 'src/app/authentication/services/data-storage.service';
 import { Road } from '../road.model';
 
 @Component({
@@ -19,7 +21,8 @@ export class RoadsComponent implements OnInit, OnDestroy {
   constructor(
     private auth: AuthenticationService,
     private router: Router,
-    private roadService: RoadService
+    private roadService: RoadService,
+    private dataStorage: DataStorageService
   ) { }
 
   ngOnInit() {
@@ -33,6 +36,14 @@ export class RoadsComponent implements OnInit, OnDestroy {
 
   toLogin() {
     this.router.navigate(['/login']);
+  }
+
+  fetchRoads() {
+    this.dataStorage.fetchData();
+  }
+
+  saveRoads() {
+    this.dataStorage.storeData().subscribe();
   }
 
   ngOnDestroy() {

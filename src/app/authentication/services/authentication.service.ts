@@ -44,11 +44,6 @@ export class AuthenticationService {
             );
     }
 
-    destroyToken() {
-        firebase.auth().signOut();
-        this.token = null;
-    }
-
     getToken() {
         firebase.auth().currentUser.getIdToken()
             .then(
@@ -59,5 +54,10 @@ export class AuthenticationService {
 
     isAuthenticated() {
         return this.token != null;
+    }
+
+    destroyToken() {
+        firebase.auth().signOut();
+        this.token = null;
     }
 }

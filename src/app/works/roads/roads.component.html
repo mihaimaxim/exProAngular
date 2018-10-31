@@ -7,17 +7,17 @@
       <div class="row">
         <div class="col-12">
           <div *ngIf='auth.isAuthenticated()'>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <button class="btn btn-default" (click)='fetchRoads()'>fetch roads</button>
+            <button class="btn btn-default" (click)='saveRoads()'>save roads</button>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf='roadService.roads.length !== 0'>
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
               <div class="carousel-inner">
-                <app-road-item 
-                *ngFor='let roadElement of roads; let i = index' 
-                [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'"
-                [road]='roadElement' [index]='i'></app-road-item>
+                <app-road-item *ngFor='let roadElement of roads; let i = index' [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'"
+                  [road]='roadElement' [index]='i'></app-road-item>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
