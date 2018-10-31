@@ -46,6 +46,10 @@ export class RoadsComponent implements OnInit, OnDestroy {
     this.dataStorage.storeData().subscribe();
   }
 
+  deleteRoads() {
+    this.roadService.deleteRoads();
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

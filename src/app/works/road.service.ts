@@ -38,8 +38,13 @@ export class RoadService {
         return this.roads.slice();
     }
 
-    deleteRoad(index: number) {
-        this.roads.splice(index, 1);
+    // deleteRoad(index: number) {
+    //     this.roads.splice(index, 1);
+    //     this.updatedRoads.next(this.roads.slice());
+    // }
+
+    deleteRoads() {
+        this.roads.splice(0, this.roads.length);
         this.updatedRoads.next(this.roads.slice());
     }
 }

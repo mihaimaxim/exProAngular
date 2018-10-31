@@ -8,7 +8,8 @@
         <div class="col-12">
           <div *ngIf='auth.isAuthenticated()'>
             <button class="btn btn-default" (click)='fetchRoads()'>fetch roads</button>
-            <button class="btn btn-default" (click)='saveRoads()'>save roads</button>
+            <button class="btn btn-default" (click)='saveRoads()' style="margin-left: 25px">save roads</button>
+            <button class="btn btn-default" (click)='deleteRoads()' style="margin-left: 25px">delete roads</button>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngIf='roadService.roads.length !== 0'>
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
